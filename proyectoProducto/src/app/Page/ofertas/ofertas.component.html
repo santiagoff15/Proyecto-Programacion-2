@@ -1,0 +1,16 @@
+
+<h1 class="subtit">PRODUCTOS</h1>
+<div class="card-container">
+  <ng-container *ngIf="Productos && Productos.length">
+    <ng-container *ngFor="let productos of Productos">
+      <div  class="card" *ngIf="productos.disponibilidad">
+        <img [src]="productos.img" alt="{{ productos.nombre }}" class="product-image">
+        <h2>{{ productos.nombre }}</h2>
+        <p>{{productos.descripcion}}</p>
+        <p>Precio: {{ productos.precio | currency}}</p>
+        <p>Cantidad: {{productos.cantidad}}</p>
+        <button type="button" class="btn btn-outline-primary" (click)="agregar(productos)">Agregar al carrito</button>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

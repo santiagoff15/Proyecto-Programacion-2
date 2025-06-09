@@ -1,0 +1,28 @@
+<h1>Favoritos</h1>
+<div *ngIf="productosEnFavoritos.length === 0">
+  <p>No hay productos en Favoritos.</p>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productosEnFavoritos">
+      <td><img [src]="producto.img" alt="{{ producto.nombre }}" style="width: 50px; height: 50px;"></td>
+      <td>{{producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+
+     
+      <td>
+        <button (click)="eliminarFavorito(producto.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

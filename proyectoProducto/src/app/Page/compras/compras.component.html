@@ -1,0 +1,121 @@
+<h2 class="text-center mb-4">Formulario de Compra</h2>
+
+<form [formGroup]="formularioCompra" (ngSubmit)="finalizarCompra()" style="max-width: 600px" class="mx-auto">
+    <div class="row g-3 mb-3">
+        <div class="col-md-6">
+            <label for="nombre" class="form-label fw-semibold">Nombre <span class="text-danger">*</span></label>
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                <input id="nombre" formControlName="nombre" placeholder="Tu nombre completo" class="form-control">
+            </div>
+            <div class="form-text text danger" *ngIf="formularioCompra.get('nombre')?.touched && formularioCompra.get('nombre')?.invalid">
+                El nombre es obligatorio.
+            </div>
+        </div>
+    </div>
+
+
+<div class="mb-3">
+    <label for="telefono" class="form-label fw-semibold">Telefono <span class="text-danger">*</span></label>
+    <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+        <input  formControlName="telefono" class="form-control" placeholder="Ej: +54 9 11 1234 5678" id="telefono">
+    </div>
+    <div *ngIf="formularioCompra.get('telefono')?.touched && formularioCompra.get('telefono')?.invalid" class="text-danger form-text">
+El telefono es obligatorio.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="correo" class="form-label fw-semibold">Correo <span class="text-danger">*</span></label>
+    <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+        <input  formControlName="correo" class="form-control" placeholder="ejemplo@correo.com" id="correo">
+    </div>
+    <div *ngIf="formularioCompra.get('correo')?.touched && formularioCompra.get('correo')?.invalid" class="text-danger form-text">
+Ingresa un correo valido.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="direccion" class="form-label fw-semibold">Direccion <span class="text-danger">*</span></label>
+    <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-geo-alt-fill"></i></span>
+        <input  formControlName="direccion" class="form-control" placeholder="Caññe, numero, piso, depto" id="direccion">
+    </div>
+    <div *ngIf="formularioCompra.get('direccion')?.touched && formularioCompra.get('direccion')?.invalid" class="text-danger form-text">
+La direccion es obligatoria.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="ciudad" class="form-label fw-semibold">Ciudad <span class="text-danger">*</span></label>
+    <div class="input-group">
+        <input  formControlName="ciudad" class="form-control" placeholder="Ej: Buenos Aires" id="ciudad">
+    </div>
+    <div *ngIf="formularioCompra.get('ciudad')?.touched && formularioCompra.get('ciudad')?.invalid" class="text-danger form-text">
+La Ciudad es obligatoria.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="provincia" class="form-label fw-semibold">Provincia <span class="text-danger">*</span></label>
+    <div class="input-group">
+        <input  formControlName="provincia" class="form-control" placeholder="Ej: Buenos Aires" id="provincia">
+    </div>
+    <div *ngIf="formularioCompra.get('provincia')?.touched && formularioCompra.get('provincia')?.invalid" class="text-danger form-text">
+La Provincia es obligatoria.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="codigoPostal" class="form-label fw-semibold">Codigo Postal <span class="text-danger">*</span></label>
+    <div class="input-group">
+        <input  formControlName="codigoPostal" class="form-control" placeholder="Ej: 1428" id="codigoPostal">
+    </div>
+    <div *ngIf="formularioCompra.get('codigoPostal')?.touched && formularioCompra.get('codigoPostal')?.invalid" class="text-danger form-text">
+El Codigo Postal es obligatorio.
+    </div>
+</div>
+
+<div class="mb-3">
+    <label for="metodoPago" class="form-label fw-semibold">Metodo de Pago <span class="text-danger">*</span></label>
+    <select formControlName="metodoPago" id="metodoPago" class="form-select">
+        <option value="">Seleccione Metodo de Pago</option>
+        <option value="tarjeta">Tarjeta de credito/debito</option>
+        <option value="efectivo">Efectivo</option>
+        <option value="transferencia">Transferencia Bancaria</option>
+    </select>
+    <div *ngIf="formularioCompra.get('metodoPago')?.touched && formularioCompra.get('metodoPago')?.invalid" class="text-danger form-text">
+Debes seleccionar un metodo de pago.
+    </div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center my-4">
+    <div>
+        <p>Envio: ${{ envio.toFixed(2) }}</p>
+        <p><strong>Total a pagar: {{ calcularTotal() | number: '1.2-2' }}</strong></p>
+    </div>
+    <button class="btn btn-primary" type="submit">Finalizar Compra</button>
+</div>
+</form>
+
+<!-- Modal PDF -->
+
+<div *ngIf="mostrarModal" class="modal show d-block" tabindex="-1" role="dialog" style="background: rgba(0, 0, 0, 0.5);">
+    <div class="modal-dialog modal-xl" role="document" style="max-width: 90vw; max-height: 90vh;"></div>
+    <div class="modal-contet" style="height: 90vh;">
+        <div class="modal-header">
+            <h5 class="modal-title">Factura PDF</h5>
+            <button type="button" class="btn-close" aria-label="Cerrar" (click)="cerrarModal()"></button>
+        </div>
+        <div class="modal-body p-0" style="height: 80vh;">
+            <iframe [src]="pdfSrc" *ngIf="pdfSrc" id="pdfFrame" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="imprimirPDF()">Imprimir</button>
+            <button type="button" class="btn btn-secondary" (click)="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+</div>
