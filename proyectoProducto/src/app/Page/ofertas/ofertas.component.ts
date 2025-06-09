@@ -19,7 +19,7 @@ export class OfertasComponent {
       precio: 800,
       img: "https://tse3.mm.bing.net/th/id/OIP.QF4WITnd-5FATIX73HocnwHaHa?rs=1&pid=ImgDetMain",
       disponibilidad: true,
-      cantidad: 20
+      cantidad: 2
     },
     {
       id: 2,
@@ -28,7 +28,7 @@ export class OfertasComponent {
       precio: 500,
       img: "https://1.bp.blogspot.com/-iVolJIu6ebQ/TtY6m6nwGKI/AAAAAAAAAig/D2jvqzWPd_s/s1600/clementina.jpg",
       disponibilidad: true,
-      cantidad: 20
+      cantidad: 2
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export class OfertasComponent {
       precio: 800,
       img: "https://healthbenefitstimes.com/9/uploads/2012/12/Red-Pomelo.jpg",
       disponibilidad: true,
-      cantidad: 20
+      cantidad: 2
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ export class OfertasComponent {
       precio: 1000,
       img: "https://tse4.mm.bing.net/th/id/OIP.8t3v57tjo4fnkjDRie-wpgHaE9?rs=1&pid=ImgDetMain",
       disponibilidad: true,
-      cantidad: 10
+      cantidad: 2
     },
     {
       id: 5,
@@ -55,7 +55,7 @@ export class OfertasComponent {
       precio: 300,
       img: "https://tse3.mm.bing.net/th/id/OIP.6BjoCEER5Dfxv_6eFQXu4AHaGr?rs=1&pid=ImgDetMain",
       disponibilidad: true,
-      cantidad: 10
+      cantidad: 2
     }
   ];
   // Constructor donde inyectamos el servicio del carrito

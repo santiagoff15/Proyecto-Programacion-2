@@ -1,6 +1,6 @@
 
 <h1 class="subtit">PRODUCTOS</h1>
-<div class="card-container">
+<div class="card-container col-5" id="card-container">
   <ng-container *ngIf="Productos && Productos.length">
     <ng-container *ngFor="let producto of Productos">
       <div  class="card" *ngIf="producto.disponibilidad">
@@ -10,9 +10,11 @@
         <p>Precio: {{ producto.precio | currency}}</p>
         <p>Cantidad: {{producto.cantidad}}</p>
         <button type="button" class="btn btn-outline-primary" (click)="agregar(producto)">Agregar al carrito</button>
-        <button type="button" class="btn btn-outline-primary" (click)="agregarFavorito(producto)"><img src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt=""></button>
+        <button type="button" class="btn btn-outline-primary" (click)="agregarFavorito(producto)"><img src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="Favorito" style="width: 20px; height: 20px;"></button>
 
       </div>
     </ng-container>
   </ng-container>
 </div>
+
+<!-- https://odd.omegawatches.com/acd85d2b-4956-46a2-91d7-f283d9b5aa03/es_ES/default/watch/43423422210001 -->

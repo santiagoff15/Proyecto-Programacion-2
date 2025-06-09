@@ -5,3 +5,14 @@
     justify-content: center;
     width: 100%;
   }
+  
+  .navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  

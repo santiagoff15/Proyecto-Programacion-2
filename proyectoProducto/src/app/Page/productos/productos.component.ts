@@ -39,39 +39,57 @@ agregarFavorito(producto: Producto) {
   Productos: Producto[]= [
     {
       id: 1,
-      descripcion: "La mejor manzana de la patagonia",
-      nombre: "Manzana",
-      precio: 300,
-      img: "https://th.bing.com/th/id/R.c6ef1c7c177ba0e205add120ea606bf5?rik=v3wGpu4bFxqMtA&riu=http%3a%2f%2fwww.ibereco.com%2fimagen%2fcompleta%2f0%2f0%2fmanzana-roja-unidad_1.jpg&ehk=YYUtD01LCi9sJPys3KZ4sp83JmIlX0wQrzg79GZBO3w%3d&risl=&pid=ImgRaw&r=0",
+      descripcion: "Automático 34mm, Ceramica negra",
+      nombre: "Audemars Piguet Royal Oak",
+      precio: 70700,
+      img: "https://dynamicmedia.audemarspiguet.com/is/image/audemarspiguet/watch-896?size=568,0&dpr=off&fmt=avif-alpha&dpr=off",
       disponibilidad: true,
-      cantidad: 20
+      cantidad: 1
     },
     {
       id: 2,
-      descripcion: "La mejor banana de la region",
-      nombre: "Banana",
-      precio: 500,
-      img: "https://th.bing.com/th/id/OIP.4SS14J9OyyhuvbSw-tvEYwHaFj?rs=1&pid=ImgDetMain",
+      descripcion: "Tourbillon Volante Automático",
+      nombre: "Audemars Piguet Royal Oak",
+      precio: 295.000,
+      img: "https://dynamicmedia.audemarspiguet.com/is/image/audemarspiguet/watch-1031?size=568,0&dpr=off&fmt=avif-alpha&dpr=off",
       disponibilidad: true,
-      cantidad: 20
+      cantidad: 1
     },
     {
       id: 3,
-      descripcion: "La mejor pera de la ciudad",
-      nombre: "Pera",
-      precio: 800,
-      img: "https://th.bing.com/th/id/OIP.REw4HkHTBpqMwF7qKzoMawHaKL?rs=1&pid=ImgDetMain",
+      descripcion: "Tamaño pequeño, movimiento de cuarzo, acero, brazalete de metal y correa de piel intercambiables",
+      nombre: "Cartier Santos",
+      precio: 6600,
+      img: "https://www.cartier.com/variants/images/46376663162922522/img1/w1242_tpadding12.jpg",
       disponibilidad: true,
-      cantidad: 20
+      cantidad: 1
     },
     {
       id: 4,
-      descripcion: "La mejor palta del mundo",
-      nombre: "Palta",
-      precio: 1000,
-      img: "https://th.bing.com/th/id/OIP.yFGYMDr7-gh_IkW1elfwkQHaGW?rs=1&pid=ImgDetMain",
+      descripcion: "41 mm, Oro Moonshine™ con Oro Moonshine™",
+      nombre: "Omega Seamaster Aqua Terra 150M",
+      precio: 7000,
+      img: "https://odd.omegawatches.com/laravel/storage/images/800x1100-agGBMI4QVanCdfx6mYhKSjl5L11FEm5AMjkChoUJ-2000x2000.png",
       disponibilidad: true,
-      cantidad: 10
+      cantidad: 1
+    },
+    {
+      id: 5,
+      descripcion: "Automático 34mm, Ceramica blanca",
+      nombre: "Audemars Piguet Royal Oak",
+      precio: 65000,
+      img: "https://dynamicmedia.audemarspiguet.com/is/image/audemarspiguet/watch-966?size=568,0&dpr=off&fmt=avif-alpha&dpr=off",
+      disponibilidad: true,
+      cantidad: 1
+    },
+    {
+      id: 6,
+      descripcion: 'Un condensado del "Arte de la Fusión" de Hublot, para quienes comparten ese mismo espíritu independiente. ',
+      nombre: "Hublot Gold Diamonds",
+      precio: 27800,
+      img: "https://www.evejoyeria.com/storage/product_images/desktop/361.PX.1280.RX.1104.jpg",
+      disponibilidad: true,
+      cantidad: 1
     }
   ];
   
